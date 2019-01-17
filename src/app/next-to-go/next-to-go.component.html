@@ -27,6 +27,7 @@
                 <h4>Next to Go</h4>
             </div>
             <div class="card-body">
+                <ub-progress-bar *ngIf="inProgress"></ub-progress-bar>
                 <ub-next-race [nextRaces]="nextToGoRaces"></ub-next-race>  
             </div>
         </div>

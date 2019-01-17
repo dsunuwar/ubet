@@ -13,6 +13,7 @@ import { ListItem } from '../models/list-item.interface';
 export class NextToGoComponent implements OnInit {
   // races filtered by type
   nextToGoRaces: Race[];
+  inProgress = false;
 
   // keep a of all nextToGo races
   races: Race[];
@@ -44,8 +45,10 @@ export class NextToGoComponent implements OnInit {
     this.getRacesByJurisdiction(jurisdiction);
   }
 
-  getRacesByJurisdiction(jurisdiction){
+  getRacesByJurisdiction(jurisdiction) {
+    this.inProgress = true;
     this.raceService.getRaces(jurisdiction.value).subscribe(res => {
+      this.inProgress = false;
       this.races = res;
       this.filterRaces(this.defaultNextToGoRace);
     })

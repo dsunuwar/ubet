@@ -8,6 +8,7 @@ import { NextRaceComponent } from './next-race/next-race.component';
 import { NextRaceService } from './next-race/next-race.service';
 import { DropdownListComponent } from './shared/dropdown-list/dropdown-list.component';
 import { NextToGoComponent } from './next-to-go/next-to-go.component';
+import { ProgressBarComponent } from './shared/progress-bar/progress-bar.component';
 
 
 
@@ -16,7 +17,8 @@ import { NextToGoComponent } from './next-to-go/next-to-go.component';
     AppComponent,
     NextRaceComponent,
     DropdownListComponent,
-    NextToGoComponent
+    NextToGoComponent,
+    ProgressBarComponent
   ],
   imports: [
     HttpClientModule,
