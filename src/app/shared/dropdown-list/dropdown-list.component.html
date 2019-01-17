@@ -1,0 +1,10 @@
+<div class="dropdown-wrapper">
+  <div ngbDropdown>
+    <button class="btn btn-outline-secondary btn-sm btn-block" id="q-dropdown-basic" ngbDropdownToggle>{{selectedListItem.label}}</button>
+    <div ngbDropdownMenu aria-labelledby="q-dropdown-basic">
+        <div *ngFor="let item of listItems">
+            <button type="button" class="dropdown-item" (click)="onItemSelect(item)">{{item.label}}</button>
+        </div>
+    </div>
+  </div>
+</div>

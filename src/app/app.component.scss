@@ -1,0 +1,41 @@
+header {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 4;
+}
+header, footer {
+    background-color: #008542;
+    height: 50px;
+}
+
+.info-bar {
+    position: fixed;
+    top: 50px;
+    right: 0;
+    left: 0;
+    box-shadow: 0 3px 3px #cccccc;
+    height: 5px;
+    z-index: 3;
+    background-color: #ffffff;
+}
+
+footer {
+    margin-top: 10px;
+    font-size: 13px;
+    color: #ffffff;
+    line-height: 40px;
+}
+
+main {
+    margin-top: 70px;
+}
+
+.brand-logo {
+    color: #ffffff;
+    line-height: 50px;
+    margin-left: 15px;
+    text-decoration: none;
+    display: inline-block;
+}

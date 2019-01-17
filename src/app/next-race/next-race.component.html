@@ -1,0 +1,9 @@
+<nav class="row next-togo-races">
+  <div *ngFor="let race of nextRaces" class="col-sm-12 col-md-3 nav-entry">
+    <div class="start-time">{{ race.raceStartTime }}</div>
+    <div class="race-number">{{ race.raceNumber }}</div>
+    <div class="race-name">{{ race.raceName }}</div>
+    <div class="meeting-name">{{ race.meetingName }}</div>
+    <div class="meeting-date">{{ race.meetingDate }}</div>
+  </div>
+</nav>

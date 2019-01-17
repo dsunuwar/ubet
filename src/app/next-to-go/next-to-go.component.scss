@@ -1,0 +1,42 @@
+.nav-entries {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+}
+
+.nav-entry {
+    border-radius: 3px;
+    padding: 10px;
+    border: 3px solid #e6e6e6;
+    font-size: 14px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: inline-block;
+    margin-top: 10px;
+    flex-basis: 30%;
+}
+
+.ub-dropdown-label {
+    margin-right: 10px;
+    font-size: 13px;
+}
+
+.filter-item {
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+.filter-item + .filter-item {
+  margin-left: 20px;
+}
+.card{
+    margin-top: 10px;
+}
+.card-header h4 {
+    margin-bottom: 0;
+}
+/* apply margin only for mobile view */
+[class*="col-sm"] {
+    margin-top: 1.6%
+}
