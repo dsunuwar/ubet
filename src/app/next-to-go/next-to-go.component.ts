@@ -14,6 +14,7 @@ export class NextToGoComponent implements OnInit {
   // races filtered by type
   nextToGoRaces: Race[];
   inProgress = false;
+  today: number;
 
   // keep a of all nextToGo races
   races: Race[];
@@ -34,6 +35,7 @@ export class NextToGoComponent implements OnInit {
   constructor(private raceService: AppService) { }
 
   ngOnInit() {
+    this.today = Date.now();
     this.getRacesByJurisdiction(this.defaultJurisdiction);
   }
 
