@@ -8,8 +8,4 @@ import { race } from 'rxjs/operators';
 })
 export class AppComponent {
   title = 'TAB.COM.AU';
-
-  filterRaces(raceType){
-    console.log(raceType);
-  }
 }

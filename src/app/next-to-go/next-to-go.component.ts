@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Race } from '../models/race.interface';
 import { AppService } from '../app.service';
 import { RaceType } from '../models/race-type.interface';
-import { race } from 'q';
 import { ListItem } from '../models/list-item.interface';
 
 @Component({

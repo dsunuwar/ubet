@@ -11,7 +11,6 @@ import { NextToGoComponent } from './next-to-go/next-to-go.component';
 import { ProgressBarComponent } from './shared/progress-bar/progress-bar.component';
 
 
-
 @NgModule({
   declarations: [
     AppComponent,
