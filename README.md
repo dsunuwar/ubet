@@ -3,6 +3,23 @@ In this coding excercise, i will setup a server for API to live on. I will use N
 
 For the Front-end, i will use latest Angular CLI to generate seed project and build from there. I will also use Twitter Bootstrap for UI framework. The Bootstrap will provide me css style reset, responsive grid, buttons, and card.
 
+
+
+# Objectives
+Write a web site to display next to go races, similar to https://www.tab.com.au/racing/next-to-go by using an API provided. The site should work in both mobile and desktop view.
+
+Functionalities:
+- Allow user to switch jurisdiction from 'NSW' to 'VIC' and vice-versa. Default jurisdiction should be 'NSW'.
+- Allow user to filter races by race type. In the API, the raceType property can have the following values: R for Thoroughbred, G for Greyhounds and H for Harness. Default race type should be Thoroughbred.
+- Sort the races by start time with the earliest race on top
+- Display the following information for each race:
+Time to start, 
+Race number,
+Race name,
+Meeting name,
+Meeting location,
+Meeting date
+
 ## Development server
 From terminal, go to project root directory.
 - Run `npm run start`
