@@ -20,7 +20,7 @@ Meeting date
 
 # Installing & running
 Project requires Node.js and NPM. It can be downloaded and isntalled from https://nodejs.org. To install the project, first clone it from Github, go to project root by using terminal and,   
-- Run 'npm install'
+- Run `npm install`
 
 ## Development server
 From terminal, go to project root directory.
