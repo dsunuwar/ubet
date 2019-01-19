@@ -1,26 +1,21 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { NgModule } from '@angular/core';
-import { NgbDropdownModule } from '@ng-bootstrap/ng-bootstrap';
+
+// custom modules & components
+import { SharedModule } from './shared/shared.module';
 
 import { AppComponent } from './app.component';
 import { NextRaceComponent } from './next-race/next-race.component';
-import { NextRaceService } from './next-race/next-race.service';
-import { DropdownListComponent } from './shared/dropdown-list/dropdown-list.component';
 import { NextToGoComponent } from './next-to-go/next-to-go.component';
-import { ProgressBarComponent } from './shared/progress-bar/progress-bar.component';
+
+// data services
+import { AppService } from './app.service';
 
 @NgModule({
-    declarations: [
-        AppComponent,
-        NextRaceComponent,
-        DropdownListComponent,
-        NextToGoComponent,
-        ProgressBarComponent
-    ],
-    imports: [HttpClientModule, BrowserModule, NgbDropdownModule],
-    exports: [NextToGoComponent],
-    providers: [NextRaceService, HttpClientModule],
+    declarations: [AppComponent, NextToGoComponent, NextRaceComponent],
+    imports: [HttpClientModule, BrowserModule, SharedModule],
+    providers: [HttpClientModule, AppService],
     bootstrap: [AppComponent]
 })
 export class AppModule {}
