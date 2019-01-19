@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 
 // custom modules & components
@@ -15,7 +15,7 @@ import { AppService } from './app.service';
 @NgModule({
     declarations: [AppComponent, NextToGoComponent, NextRaceComponent],
     imports: [HttpClientModule, BrowserModule, SharedModule],
-    providers: [HttpClientModule, AppService],
+    providers: [AppService],
     bootstrap: [AppComponent]
 })
 export class AppModule {}
