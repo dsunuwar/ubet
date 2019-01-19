@@ -12,7 +12,7 @@ export class AppService {
 
     constructor(private http: HttpClient) {}
 
-    // TODO: type check jurisdiction with enumerables 
+    // TODO: type check jurisdiction with enumerables
     getRaces(jurisdiction: 'NSW' | 'VIC' = 'NSW') {
         // TODO: create an interface for api response to avoid TS2339 error
         return this.http.get<any>(`${this.api}/${jurisdiction}`).pipe(
