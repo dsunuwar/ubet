@@ -2,6 +2,9 @@
 const http = require('http');
 const app = require('./app');
 
+//server start
+start();
+
 function start() {
     console.log('Starting http server');
     const port = normalizePort(process.env.PORT || '3002');
@@ -30,9 +33,6 @@ function start() {
         console.log(` Error: ${error}`);
     });
 }
-
-//server start
-start();
 
 // Normalize a port into a number, string, or false.
 function normalizePort(val) {
