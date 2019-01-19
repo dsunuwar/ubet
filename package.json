@@ -14,8 +14,8 @@
     "dev:backend": "node server/www.js",
     "concurrently": "concurrently -p \"[{name} {pid} {time}]\" -t \"HH:mm:ss.SSS\" --kill-others",
     "prettier": "prettier --tab-width 4 --print-width 100 --single-quote",
-    "tsformat": "npm run prettier -- --write '{server,src}{/**/*.ts,.ts,.json}'",
-    "tsvalidate": "npm run prettier -- --list-different '{server,src}{/**/*.ts,.ts,.json}'"
+    "tsformat": "npm run prettier -- --write '{server,src/app}{/**/*.ts,.ts,/**/*.js,.json}'",
+    "tsvalidate": "npm run prettier -- --list-different '{server,src/app}{/**/*.ts,.ts,/**/*.js,.json}'"
 
   },
   "private": true,
