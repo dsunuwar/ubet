@@ -5,58 +5,65 @@ import { RaceType } from '../models/race-type.interface';
 import { ListItem } from '../models/list-item.interface';
 
 @Component({
-  selector: 'ub-next-to-go',
-  templateUrl: './next-to-go.component.html',
-  styleUrls: ['./next-to-go.component.scss']
+    selector: 'ub-next-to-go',
+    templateUrl: './next-to-go.component.html',
+    styleUrls: ['./next-to-go.component.scss']
 })
 export class NextToGoComponent implements OnInit {
-  // races filtered by type
-  nextToGoRaces: Race[];
-  inProgress = false;
-  today: number;
+    // races filtered by type
+    nextToGoRaces: Race[];
 
-  // keep a of all nextToGo races
-  races: Race[];
-  defaultNextToGoRace: ListItem = {label:'Thoroughbred', value:'R'};
-  
-  listOfRaceTypes: ListItem[] = [
-    {label:'Thoroughbred', value:'R'},
-    {label:'Greyhounds', value:'G'},
-    {label:'Harness', value:'H'}
-  ];
+    inProgress = false;
+    today: number;
 
-  defaultJurisdiction: ListItem = {label: 'New South Wales', value: 'NSW'};
-  listOfJurisdiction: ListItem[] = [
-    {label: 'New South Wales', value: 'NSW'},
-    {label: 'Victoria', value: 'VIC'}
-  ];
+    // keep a copy of all nextToGo races
+    races: Race[];
+    defaultNextToGoRace: ListItem = { label: 'Thoroughbred', value: 'R' };
 
-  constructor(private raceService: AppService) { }
+    // can be kept in config file or should come from picklist API
+    listOfRaceTypes: ListItem[] = [
+        { label: 'Thoroughbred', value: 'R' },
+        { label: 'Greyhounds', value: 'G' },
+        { label: 'Harness', value: 'H' }
+    ];
 
-  ngOnInit() {
-    this.today = Date.now();
-    this.getRacesByJurisdiction(this.defaultJurisdiction);
-  }
+    defaultJurisdiction: ListItem = { label: 'New South Wales', value: 'NSW' };
 
-  filterRaces(raceType: RaceType) {
-    this.nextToGoRaces = this.sortRacesByTime(this.races.filter(race => race.raceType === raceType.value));
-  }
+    // can be kept in config file or should come from picklist API
+    listOfJurisdiction: ListItem[] = [
+        { label: 'New South Wales', value: 'NSW' },
+        { label: 'Victoria', value: 'VIC' }
+    ];
 
-  switchJurisdiction(jurisdiction) {
-    this.getRacesByJurisdiction(jurisdiction);
-  }
+    constructor(private raceService: AppService) {}
 
-  getRacesByJurisdiction(jurisdiction) {
-    this.inProgress = true;
-    this.raceService.getRaces(jurisdiction.value).subscribe(res => {
-      this.inProgress = false;
-      this.races = res;
-      this.filterRaces(this.defaultNextToGoRace);
-    })
-  }
+    ngOnInit() {
+        this.today = Date.now();
+        this.getRacesByJurisdiction(this.defaultJurisdiction);
+    }
 
-  sortRacesByTime(races): Race[] {
-    return races.sort((a,b) => new Date(a.raceStartTime).getTime() - new Date(b.raceStartTime).getTime());
-  }
+    filterRaces(raceType: RaceType) {
+        this.nextToGoRaces = this.sortRacesByTime(
+            this.races.filter(race => race.raceType === raceType.value)
+        );
+    }
 
+    switchJurisdiction(jurisdiction) {
+        this.getRacesByJurisdiction(jurisdiction);
+    }
+
+    getRacesByJurisdiction(jurisdiction) {
+        this.inProgress = true;
+        this.raceService.getRaces(jurisdiction.value).subscribe(res => {
+            this.inProgress = false;
+            this.races = res;
+            this.filterRaces(this.defaultNextToGoRace);
+        });
+    }
+
+    sortRacesByTime(races): Race[] {
+        return races.sort(
+            (a, b) => new Date(a.raceStartTime).getTime() - new Date(b.raceStartTime).getTime()
+        );
+    }
 }

@@ -1,4 +1,4 @@
 export interface RaceType {
     label: string;
-    value: string
+    value: string;
 }

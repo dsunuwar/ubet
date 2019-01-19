@@ -10,16 +10,16 @@ function start() {
     const server = http.createServer(app);
     server.listen(port, () => {
         // use server side logger such as winston here
-        console.log(`Server running on port: ${port }`);
+        console.log(`Server running on port: ${port}`);
     });
 
-    server.on('error', (error) => {
-        switch(error.code) {
-            case 'EACCES': 
+    server.on('error', error => {
+        switch (error.code) {
+            case 'EACCES':
                 console.log('Elevated priviledges required');
                 process.exit(1);
                 break;
-            case 'EADDRINUSE': 
+            case 'EADDRINUSE':
                 console.log(`Port ${port} already in use`);
                 process.exit(1);
                 break;
@@ -27,13 +27,12 @@ function start() {
                 throw error;
         }
 
-        console.log(` Error: ${error}`); 
-    })
+        console.log(` Error: ${error}`);
+    });
 }
 
 //server start
 start();
-
 
 // Normalize a port into a number, string, or false.
 function normalizePort(val) {
@@ -51,7 +50,3 @@ function normalizePort(val) {
 
     return false;
 }
-
-
-
-

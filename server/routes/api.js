@@ -4,7 +4,7 @@
 const express = require('express');
 const nextRaceRouter = require('./next-race');
 
-const apiRouter =  express.Router();
+const apiRouter = express.Router();
 
 // TODO: move to middleware folder
 apiRouter.use((req, res, next) => {
