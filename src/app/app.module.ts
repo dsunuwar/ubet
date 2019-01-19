@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA,NO_ERRORS_SCHEMA } from '@angular/core';
 
 // custom modules & components
 import { SharedModule } from './shared/shared.module';
@@ -16,6 +16,9 @@ import { AppService } from './app.service';
     declarations: [AppComponent, NextToGoComponent, NextRaceComponent],
     imports: [HttpClientModule, BrowserModule, SharedModule],
     providers: [AppService],
+
+    // needed to support non html5 element i.e. custom components
+    schemas: [CUSTOM_ELEMENTS_SCHEMA,NO_ERRORS_SCHEMA],
     bootstrap: [AppComponent]
 })
 export class AppModule {}
